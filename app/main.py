@@ -22,5 +22,5 @@ def draw_gaussian_distribution_graph(data: dict[int, float]) -> None:
     plt.xlabel("Number of Heads")
     plt.ylabel("Percentage")
     plt.xticks(range(11))  # From 0 to 10 heads
-    plt.grid(axis="y", linestyle=""-"", alpha=0.7)
+    plt.grid(axis="y", linestyle=" -- ", alpha=0.7)
     plt.show()
