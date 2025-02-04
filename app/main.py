@@ -1,6 +1,7 @@
 import random
 import matplotlib.pyplot as plt
 
+
 def flip_coin(trials: int = 10000,
               flips: int = 10) -> dict[int, float]:
     flip_result = {i: 0 for i in range(0, flips + 1)}
