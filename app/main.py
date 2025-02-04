@@ -1,5 +1,4 @@
 import random
-import matplotlib.pyplot as plt
 
 
 def flip_coin(trials: int = 10000,
@@ -14,13 +13,3 @@ def flip_coin(trials: int = 10000,
         flip_result[key] = (flip_result[key] / trials) * 100
 
     return flip_result
-
-
-def draw_gaussian_distribution_graph(data: dict[int, float]) -> None:
-    plt.bar(data.keys(), data.values(), color="skyblue", edgecolor="black")
-    plt.title("Gaussian Distribution of Coin Flips (10 flips, 10000 trials)")
-    plt.xlabel("Number of Heads")
-    plt.ylabel("Percentage")
-    plt.xticks(range(11))  # From 0 to 10 heads
-    plt.grid(axis="y", linestyle=" -- ", alpha=0.7)
-    plt.show()
