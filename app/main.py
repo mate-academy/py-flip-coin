@@ -40,5 +40,5 @@ def main() -> None:
     draw_gaussian_distribution_graph()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
