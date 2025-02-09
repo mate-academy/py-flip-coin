@@ -6,8 +6,9 @@ import matplotlib.ticker as ticker
 import numpy as np
 
 
-def flip_coin() -> dict:
-    flips = [[random.choice([1, 0]) for _ in range(10)] for _ in range(10000)]
+def flip_coin(flips: int = 10001) -> dict:
+
+    flips = [[random.choice([1, 0]) for _ in range(10)] for _ in range(flips)]
     count_ten_flips = [Counter(item) for item in flips]
     total_counts = Counter(head_coin[1] for head_coin in count_ten_flips)
     percent_flips = {
