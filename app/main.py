@@ -19,11 +19,12 @@ def flip_coin(num_cases: int = 10000, num_flips: int = 10) -> dict:
 
 
 def draw_gaussian_distribution_graph() -> None:
-    koord_x = np.array(list(flip_coin().keys()))
-    koord_y = np.array(list(flip_coin().values()))
+    xpoints = np.array(list(flip_coin().keys()))
+    ypoints = np.array(list(flip_coin().values()))
 
-    plt.plot(koord_x, koord_y)
+    plt.plot(xpoints, ypoints)
 
+    plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage %")
 
