@@ -1,5 +1,7 @@
 import random
 import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.axisartist.angle_helper import select_step
 
 
 def flip_coin(num_cases: int = 10000, num_flips: int = 10) -> dict:
@@ -21,10 +23,13 @@ def draw_gaussian_distribution_graph(results) -> None:
     heads = list(results.keys())
     percentages = list(results.values())
 
-    plt.plot(heads, percentages, marker='o')
+    plt.plot(heads, percentages, color = 'b')
 
     plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage %")
-    plt.grid(True)
+    plt.xticks(np.arange(0, 11, step=1))
+    plt.yticks(np.arange(0, 101, step=10))
+    plt.xlim(0, 10)
+    plt.ylim(0, 100)
     plt.show()
