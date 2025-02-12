@@ -2,7 +2,7 @@ import random
 from collections import Counter
 
 
-def flip_coin(trials: int = 10000, flips_per_trial:int = 10) -> dict: 
+def flip_coin(trials: int = 10000, flips_per_trial: int = 10) -> dict:
     results = [
         sum(random.choice(
             [0, 1]
