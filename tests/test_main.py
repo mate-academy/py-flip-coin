@@ -23,58 +23,69 @@ def test_function_should_return_different_values():
 
 
 @pytest.mark.parametrize(
-    "number, expected",
+    "number, expected, limit",
     [
         pytest.param(
             5,
             22,
+            27,
         ),
         pytest.param(
             4,
             18,
+            22
         ),
         pytest.param(
             6,
             18,
+            22
         ),
         pytest.param(
             3,
             10,
+            18
         ),
         pytest.param(
             7,
             10,
+            18
         ),
         pytest.param(
             2,
             2,
+            10
         ),
         pytest.param(
             8,
             2,
+            10
         ),
         pytest.param(
             1,
             0.6,
+            2
         ),
         pytest.param(
             9,
             0.6,
+            2
         ),
         pytest.param(
             10,
             0.01,
+            0.6
         ),
         pytest.param(
             0,
             0.01,
+            0.6
         ),
     ],
 )
-def test_gausian_distribution(number, expected):
+def test_gausian_distribution(number, expected, limit):
     for _ in range(20):
         coins = flip_coin()
 
-        assert coins[number] >= expected, (
+        assert expected <= coins[number] <= limit, (
             f"There must be > {number}% of '{expected}' value"
         )

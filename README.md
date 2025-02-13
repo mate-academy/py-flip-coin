@@ -13,7 +13,7 @@ and values are percentage of how many that number of heads
 dropped out of all cases.
 ```python
 print(flip_coin())
-# {0: 11, 1: 7, 2: 4, 3: 18, ... }
+# {0: 0.13, 1: 0.97, 2: 4.22, 3: 12.04, ... }
 ```
 If you have done all correctly, you should note that
 the biggest percentage of a number of heads dropped
@@ -28,9 +28,8 @@ that draws a graph that shows the distribution.
 
 `matplotlib` is relevant library for this purpose.
 
-- [matplotlib, Diagrams](https://eax.me/python-matplotlib/)
-- [matplotlib, Graphs](https://devpractice.ru/matplotlib-lesson-4-1-viz-linear-chart/#p1)
-- [matplotlib, Axis](https://pyprog.pro/mpl/mpl_axis_ticks.html)
+- [matplotlib, Plotting](https://www.w3schools.com/python/matplotlib_plotting.asp)
+- [matplotlib, Labels](https://www.w3schools.com/python/matplotlib_labels.asp)
 
 You should get graph like this:
 
