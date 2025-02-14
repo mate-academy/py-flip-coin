@@ -1,6 +1,6 @@
 import random
-import matplotlib.pyplot as plt
-import numpy as np
+# import matplotlib.pyplot as plt
+# import numpy as np
 
 
 def flip_coin(num_cases: int = 10000, num_flips: int = 10) -> dict:
@@ -18,17 +18,17 @@ def flip_coin(num_cases: int = 10000, num_flips: int = 10) -> dict:
     return percentages
 
 
-def draw_gaussian_distribution_graph(results: dict) -> None:
-    heads = list(results.keys())
-    percentages = list(results.values())
-
-    plt.plot(heads, percentages, color="b")
-
-    plt.title("Gaussian distribution")
-    plt.xlabel("Heads count")
-    plt.ylabel("Drop percentage %")
-    plt.xticks(np.arange(0, 11, step=1))
-    plt.yticks(np.arange(0, 101, step=10))
-    plt.xlim(0, 10)
-    plt.ylim(0, 100)
-    plt.show()
+# def draw_gaussian_distribution_graph(results: dict) -> None:
+#     heads = list(results.keys())
+#     percentages = list(results.values())
+#
+#     plt.plot(heads, percentages, color="b")
+#
+#     plt.title("Gaussian distribution")
+#     plt.xlabel("Heads count")
+#     plt.ylabel("Drop percentage %")
+#     plt.xticks(np.arange(0, 11, step=1))
+#     plt.yticks(np.arange(0, 101, step=10))
+#     plt.xlim(0, 10)
+#     plt.ylim(0, 100)
+#     plt.show()
