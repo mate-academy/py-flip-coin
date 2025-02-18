@@ -1,7 +1,6 @@
 import random
 
 
-
 def flip_coin(num_flips: int = 10000, flip: int = 10) -> dict[int, float]:
     results = {i: 0 for i in range(flip + 1)}
 
@@ -11,6 +10,3 @@ def flip_coin(num_flips: int = 10000, flip: int = 10) -> dict[int, float]:
     for key in results:
         results[key] = round((results[key] / num_flips) * 100, 2)
     return results
-
-
-
