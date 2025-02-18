@@ -13,4 +13,3 @@ def flip_coin() -> dict[int: float]:
     for flip in range(0, 11):
         result[flip] = round(result[flip], 4)
     return result
-
