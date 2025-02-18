@@ -1,8 +1,8 @@
-import numpy as np
-import matplotlib.pyplot as plt
+import random
 from collections import Counter
 import pandas as pd
 import matplotlib
+import matplotlib.pyplot as plt
 matplotlib.use("Agg")  # Use a non-GUI backend for testing
 
 
@@ -18,7 +18,7 @@ def flip_coin() -> dict[int, float]:
     num_flips = 10
 
     # Simulate 10,000 cases of flipping a coin 10 times
-    results = [sum(np.random.randint(0, 2, num_flips))
+    results = [sum(random.randint(0, 1) for _ in range(num_flips))
                for _ in range(num_trials)]
 
     # Count occurrences of each number of heads
