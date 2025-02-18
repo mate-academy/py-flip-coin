@@ -58,7 +58,7 @@ draw_gaussian_distribution_graph(flip_results)
 
 # Print results as a formatted table
 print("\nCoin Flip Distribution:")
-print(f"{"Heads": <10}{"Percentage": <10}")
+print(f'{"Heads": <10}{"Percentage": <10}')
 print("-" * 20)
 for heads, percentage in flip_results.items():
     print(f"{heads: <10}{percentage: .2f}%")
