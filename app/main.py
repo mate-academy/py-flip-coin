@@ -1,5 +1,4 @@
 import random
-from matplotlib import pyplot as plt
 
 
 def flip_coin() -> dict[int: float]:
@@ -11,13 +10,7 @@ def flip_coin() -> dict[int: float]:
             if random.gauss(0.5, 0.5) > 0.5:
                 heads_count += 1
         result[heads_count] += 0.01
+    for flip in range(0, 11):
+        result[flip] = round(result[flip], 4)
     return result
 
-
-def draw_gaussian_distribution_graph() -> None:
-    cases = flip_coin()
-    print(cases)
-    plt.plot(cases)
-    plt.xlabel("Head count")
-    plt.ylabel("Drop percentage %")
-    plt.show()
