@@ -1,40 +1,25 @@
 import random
-from collections import Counter
 import matplotlib.pyplot as plt
-import matplotlib
-
-matplotlib.use("Agg")
 
 
-def flip_coin(trials: int = 10_000, flips_per_trial: int = 10) -> dict:
-    """Simulates coin flips and returns the distribution of heads count."""
-    results = [
-        sum(random.choice([0, 1]) for _ in range(flips_per_trial))
-        for _ in range(trials)
-    ]
-    counts = Counter(results)
-    total = sum(counts.values())
-    distribution = {
-        key: (value / total) * 100
-        for key, value in sorted(counts.items())
-    }
-    return distribution
+def flip_coin() -> dict[int, float]:
+    num_cases = 10000
+    results = {i: 0 for i in range(11)}
+
+    for _ in range(num_cases):
+        heads = sum(random.choice([0, 1]) for _ in range(10))
+        results[heads] += 1
+
+    # Convert counts to percentages
+    for key in results:
+        results[key] = (results[key] / num_cases) * 100
+
+    return results
 
 
-def draw_gaussian_distribution_graph() -> None:
-    """Draws a Gaussian-like distribution graph for coin flips."""
-    data = flip_coin()
-    x, y = list(data.keys()), list(data.values())
-
-    plt.plot(x, y, "b-", linewidth=1.5)
-    plt.title("Gaussian Distribution")
-    plt.xlabel("Heads Count")
-    plt.ylabel("Drop Percentage (%)")
-    plt.ylim(0, 100)
-    plt.grid(True, linestyle="--", alpha=0.6)
+def draw_gaussian_distribution_graph(results: dict[int, float]) -> None:
+    plt.bar(results.keys(), results.values())
+    plt.xlabel("Heads count")
+    plt.ylabel("Drop percentage %")
+    plt.title("Gaussian Distribution of Coin Flips")
     plt.show()
-
-
-distribution = flip_coin()
-print(distribution)
-draw_gaussian_distribution_graph()
