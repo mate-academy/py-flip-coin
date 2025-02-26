@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 
 def flip_coin() -> dict:
     findict = {i: 0.0 for i in range(11)}
-    for i in range(10000):
+    for _ in range(10000):
         total = 0
-        for j in range(10):
+        for _ in range(10):
             key = random.choice([0, 1])
             total += key
         findict[total] += 1
@@ -19,9 +19,9 @@ def flip_coin() -> dict:
 
 def draw_gaussian_distribution_graph() -> None:
     data = flip_coin()
-    x = list(data.keys())
-    y = list(data.values())
-    plt.plot(x, y, marker='o', linestyle='-', color='b')
+    x_axis = list(data.keys())
+    y_axis = list(data.values())
+    plt.plot(x_axis, y_axis, marker="o", linestyle="-", color="b")
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage %")
     plt.title("Gaussian distribution")
@@ -29,7 +29,3 @@ def draw_gaussian_distribution_graph() -> None:
 
 
 draw_gaussian_distribution_graph()
-
-
-
-
