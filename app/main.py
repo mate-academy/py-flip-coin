@@ -11,7 +11,7 @@ def flip_coin() -> dict:
             count += random.choice([0, 1])
         result[count] += 1
 
-    # convert to percents
+    # convertion to percentages
     for key, value in result.items():
         result[key] = round((value / 100), 2)
     return result
