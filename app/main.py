@@ -25,6 +25,6 @@ def draw_gaussian_distribution_graph() -> None:
     font = {"family": "serif", "color": "red", "size": 10}
     plt.title("Gaussian distribution", fontdict=font)
     plt.xlabel("Heads count", fontdict=font)
-    plt.ylabel("Percent", fontdict=font)
+    plt.ylabel("Drop percentage, %", fontdict=font)
 
     plt.show()
