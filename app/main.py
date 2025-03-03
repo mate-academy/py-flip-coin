@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 
-matplotlib.use("TkAgg")
+matplotlib.use("Agg")
 
 
 def flip_coin() -> dict:
@@ -47,4 +47,4 @@ def draw_gaussian_distribution_graph() -> None:
 
     plt.ylim(0, 100)
 
-    plt.show()
+    plt.savefig("gaussian_distribution.png")
