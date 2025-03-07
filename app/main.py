@@ -1,11 +1,10 @@
 from collections import OrderedDict
 import random
-import matplotlib.pyplot as plt
 
 
 def flip_coin() -> dict:
     count_all = dict()
-    cases = 20000
+    cases = 10000
     flips = 10
     for _ in range(cases):
         count_head = 0
@@ -27,15 +26,3 @@ def flip_coin() -> dict:
     result_sorted = OrderedDict(sorted(result.items()))
 
     return result_sorted
-
-
-result_sorted = flip_coin()
-x_points = [element for element in result_sorted.keys()]
-y_points = [element for element in result_sorted.values()]
-
-plt.title("Gaussian distribution")
-plt.xlabel("Heads count")
-plt.ylabel("Drop percentage %")
-
-plt.plot(x_points, y_points)
-plt.show()
