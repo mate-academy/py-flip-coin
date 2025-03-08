@@ -3,7 +3,7 @@ from typing import Dict
 
 
 def flip_coin() -> Dict[int, float]:
-    total_trials = 10000
+    total_trials = 100000
     result = {i: 0.0 for i in range(11)}
     for _ in range(total_trials):
         heads = 0
@@ -14,5 +14,5 @@ def flip_coin() -> Dict[int, float]:
         result[heads] += 1
 
     for key in result:
-        result[key] = round((result[key] / total_trials) * 100, 1)
+        result[key] = round((result[key] / total_trials) * 100, 3)
     return result
