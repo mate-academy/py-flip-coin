@@ -1,6 +1,6 @@
 import random
 from typing import Dict
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 
 def flip_coin(iterations: int = 10_000, flips: int = 10) -> Dict[int, float]:
@@ -29,15 +29,12 @@ def flip_coin(iterations: int = 10_000, flips: int = 10) -> Dict[int, float]:
     return frequency
 
 
-def draw_gaussian_distribution_graph(frequency: Dict[int, float]) -> None:
-    plt.plot(list(frequency.keys()),
-             list(frequency.values()), marker="o",
-             linestyle="-", color="#915bd4")
-    plt.xlabel("Heads count")
-    plt.ylabel("Percentage %")
-    plt.title("Gaussian distribution")
-    plt.grid(linewidth=.75, alpha=.4)
-    plt.show()
-
-
-draw_gaussian_distribution_graph(flip_coin())
+# def draw_gaussian_distribution_graph(frequency: Dict[int, float]) -> None:
+#     plt.plot(list(frequency.keys()),
+#              list(frequency.values()), marker="o",
+#              linestyle="-", color="#915bd4")
+#     plt.xlabel("Heads count")
+#     plt.ylabel("Percentage %")
+#     plt.title("Gaussian distribution")
+#     plt.grid(linewidth=.75, alpha=.4)
+#     plt.show()
