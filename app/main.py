@@ -1,6 +1,10 @@
 import random
-from matplotlib import pyplot as plt
+import matplotlib
+import matplotlib.pyplot as plt
 import numpy as np
+
+
+matplotlib.use("Agg")
 
 
 def flip_coin() -> dict:
@@ -24,8 +28,10 @@ def flip_coin() -> dict:
 
 
 def draw_gaussian_distribution_graph() -> None:
-    x_values = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    y_values = np.array([value for key, value in flip_coin().items()])
+    keys, values = flip_coin().keys(), flip_coin().values()
+
+    x_values = np.array(list(keys))
+    y_values = np.array(list(values))
 
     plt.title("Gaussian distribution", loc="center")
     plt.xlabel("Heads count")
@@ -33,7 +39,4 @@ def draw_gaussian_distribution_graph() -> None:
 
     plt.plot(x_values, y_values)
     plt.ylim(0, 100)
-    plt.show()
-
-
-draw_gaussian_distribution_graph()
+    plt.savefig("gaussian_distribution.png")
