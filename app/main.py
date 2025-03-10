@@ -1,5 +1,6 @@
 import random
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def flip_coin() -> dict:
@@ -15,13 +16,13 @@ def flip_coin() -> dict:
     return chanse
 
 
-data = flip_coin()
+def plot_distribution() -> None:
+    data = flip_coin()
+    x_key = np.array(list(data.keys()))
+    y_value = np.array(list(data.values()))
 
-x_key = list(data.keys())
-y_value = list(data.values())
-
-plt.plot(x_key, y_value)
-
-plt.title("Gaussian distribution")
-plt.xlabel("Head count")
-plt.ylabel("Drop percentage %")
+    plt.title("Gaussian distribution")
+    plt.xlabel("Head count")
+    plt.ylabel("Drop percentage %")
+    plt.plot(x_key, y_value)
+    plt.show()
