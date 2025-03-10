@@ -1,5 +1,6 @@
 import random
 
+
 def flip_coin() -> dict:
     num_of_experiments = 10000
     result = {0: 0,
