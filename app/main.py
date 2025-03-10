@@ -19,14 +19,14 @@ def flip_coin() -> dict[int, float]:
     return heads_count
 
 
-# def draw_gaussian_distribution_graph(distribution: dict[int, float]) -> None:
-#     heads_values = []
-#     percentages = []
-#     for key, value in distribution.items():
-#         heads_values.append(key)
-#         percentages.append(value)
-#     x_coordinates = np.array(heads_values)
-#     y_coordinates = np.array(percentages)
-#
-#     plt.plot(x_coordinates, y_coordinates)
-#     plt.show()
+def draw_gaussian_distribution_graph(distribution: dict[int, float]) -> None:
+    heads_values = []
+    percentages = []
+    for key, value in distribution.items():
+        heads_values.append(key)
+        percentages.append(value)
+    x_coordinates = np.array(heads_values)
+    y_coordinates = np.array(percentages)
+
+    plt.plot(x_coordinates, y_coordinates)
+    plt.show()
