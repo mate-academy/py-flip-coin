@@ -1,5 +1,4 @@
 import random
-import matplotlib.pyplot as plt
 
 
 def flip_coin() -> dict:
@@ -19,15 +18,3 @@ def flip_coin() -> dict:
         coin_flip[key] = round((coin_flip[key] / 100000) * 100, 2)
 
     return coin_flip
-
-
-def draw_gaussian_distribution_graph(coin_flip: dict) -> None:
-
-    x_axis = [index for index in coin_flip]
-    y_axis = [coin_flip[index] for index in coin_flip]
-
-    plt.plot(x_axis, y_axis)
-    plt.xlabel("Heads count")
-    plt.ylabel("Drop percentage %")
-    plt.title("Gaussian distribution")
-    plt.show()
