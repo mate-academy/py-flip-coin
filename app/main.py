@@ -35,7 +35,3 @@ def draw_gaussian_distribution_graph(data: dict) -> None:
     plt.yticks(range(0, 101, 10))
 
     plt.show()
-
-
-data = flip_coin()
-draw_gaussian_distribution_graph(data)
