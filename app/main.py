@@ -17,7 +17,8 @@ def flip_coin() -> dict:
 
 
 def draw_gaussian_distribution_graph() -> None:
-    x_coord = np.array([flip_coin().keys()])
-    y_coord = np.array(flip_coin().values())
+    result = flip_coin()
+    x_coord = np.array(list(result.keys()))
+    y_coord = np.array(list(result.values()))
     plt.plot(x_coord, y_coord)
     plt.show()
