@@ -1,5 +1,4 @@
 import random
-import matplotlib.pyplot as plt
 
 
 def percentage(
@@ -37,15 +36,3 @@ def flip_coin() -> dict:
 
     dict_to_precentage(result, operation_number)
     return result
-
-
-def draw_gaussian_distribution_graph(dict_distribution: dict) -> None:
-    xvalues = list(dict_distribution.keys())
-    yvalues = list(dict_distribution.values())
-
-    plt.plot(xvalues, yvalues)
-
-    plt.xlabel("Heads count")
-    plt.ylabel("Drop precentage %")
-
-    plt.show()
