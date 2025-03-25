@@ -18,6 +18,4 @@ def draw_gaussian_distribution_graph(result: dict) -> None:
     plt.figure(figsize=(10, 6))
     plt.bar(counts, percentages, color="skyblue", edgecolor="black")
 
-
-
 # write your code here
