@@ -17,7 +17,7 @@ def draw_gaussian_distribution_graph(result: dict) -> None:
     percentages = list(result.values())
     plt.figure(figsize=(10, 6))
     plt.bar(counts, percentages, color="skyblue", edgecolor="black")
-    plt.show()
+
 
 
 # write your code here
