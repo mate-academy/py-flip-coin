@@ -8,7 +8,8 @@ def flip_coin(n_trials: int = 10000, n_flips: int = 10) -> dict:
     results = []
 
     for _ in range(n_trials):
-        heads_count = sum(random.choice([0, 1]) for _ in range(n_flips))  # Simulate flipping a fair coin
+        heads_count = sum(random.choice([0, 1])
+                          for _ in range(n_flips))
         results.append(heads_count)
 
     counts = dict(Counter(results))  # Count occurrences of each heads count
@@ -20,29 +21,34 @@ def flip_coin(n_trials: int = 10000, n_flips: int = 10) -> dict:
     return percentages
 
 
-def gaussian_distribution(x, mean, std_dev):
+def gaussian_distribution(xpoint: float, mean: float, std_dev: float) -> float:
     """ Compute Gaussian (normal) distribution function """
-    return (1 / (std_dev * sqrt(2 * pi))) * exp(-0.5 * ((x - mean) / std_dev) ** 2)
+    return ((1 / (std_dev * sqrt(2 * pi)))
+            * exp(-0.5 * ((xpoint - mean) / std_dev) ** 2))
 
 
 def draw_gaussian_distribution_graph(data: dict) -> None:
-    x = list(data.keys())  # Number of heads
-    y = list(data.values())  # Percentage occurrence
+    xpoint = list(data.keys())  # Number of heads
+    ypoint = list(data.values())  # Percentage occurrence
 
     # Calculate mean and standard deviation manually
-    mean = sum(k * v for k, v in data.items()) / sum(data.values())
-    variance = sum(((k - mean) ** 2) * v for k, v in data.items()) / sum(data.values())
+    mean = (sum(k * v for k, v in data.items())
+            / sum(data.values()))
+    variance = sum(((k - mean) ** 2)
+                   * v for k, v in data.items()) / sum(data.values())
     std_dev = sqrt(variance)
 
     # Generate Gaussian curve manually
-    x_fit = [i / 10 for i in range(min(x) * 10, (max(x) + 1) * 10)]  # More points for smooth curve
-    y_fit = [gaussian_distribution(i, mean, std_dev) * max(y) * 2.5 for i in x_fit]  # Scale Gaussian to match histogram
+    x_fit = [i / 10 for i in range(min(xpoint) * 10,
+                                   (max(xpoint) + 1) * 10)]  # More points
+    y_fit = [gaussian_distribution(i, mean, std_dev)
+             * max(ypoint) * 2.5 for i in x_fit]  # Scale Gaussian
 
     # Plot bar chart
-    plt.bar(x, y, color='b', alpha=0.6, label="Simulation Data")
+    plt.bar(xpoint, ypoint, color="b", alpha=0.6, label="Simulation Data")
 
     # Plot Gaussian fit
-    plt.plot(x_fit, y_fit, 'r-', label="Gaussian Fit")
+    plt.plot(x_fit, y_fit, "r-", label="Gaussian Fit")
 
     # Labels and title
     plt.xlabel("Number of Heads in 10 Flips")
@@ -58,5 +64,3 @@ def draw_gaussian_distribution_graph(data: dict) -> None:
 
     # Print the result dictionary
     print(data)
-
-draw_gaussian_distribution_graph(flip_coin())
