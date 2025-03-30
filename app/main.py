@@ -22,14 +22,14 @@ def flip_coin() -> dict:
 
 def draw_gaussian_distribution_graph() -> None:
     data = flip_coin()
-    x = []
-    y = []
+    x_array = []
+    y_array = []
     for key, value in data.items():
-        x.append(key)
-        y.append(value)
-    x = np.array(x)
-    y = np.array(y)
-    plt.plot(x, y)
+        x_array.append(key)
+        y_array.append(value)
+    coordinate_x = np.array(x_array)
+    coordinate_y = np.array(y_array)
+    plt.plot(coordinate_x, coordinate_y)
     plt.ylim(0, 100)
     plt.title("Gaussian distribution")
     plt.xlabel("Heads Count")
