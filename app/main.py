@@ -16,19 +16,19 @@ def flip_coin() -> dict[int, float]:
     return count_heads_dropped
 
 
-def draw_gaussian_distribution_graph(func: dict[int, float]) -> None:
-    axis_x = np.array(list(func.keys()))
-    axis_y = np.array(list(func.values()))
-
-    plt.plot(axis_x, axis_y)
-
-    plt.ylim(0, 100)
-    plt.xlim(min(axis_x), max(axis_x))
-
-    font1 = {"family": "serif", "color": "blue", "size": 20}
-
-    plt.title("Gaussian distribution", fontdict=font1)
-    plt.ylabel("Drop percentage %")
-    plt.xlabel("Heads count")
-
-    plt.show()
+# def draw_gaussian_distribution_graph(func: dict[int, float]) -> None:
+#     axis_x = np.array(list(func.keys()))
+#     axis_y = np.array(list(func.values()))
+#
+#     plt.plot(axis_x, axis_y)
+#
+#     plt.ylim(0, 100)
+#     plt.xlim(min(axis_x), max(axis_x))
+#
+#     font1 = {"family": "serif", "color": "blue", "size": 20}
+#
+#     plt.title("Gaussian distribution", fontdict=font1)
+#     plt.ylabel("Drop percentage %")
+#     plt.xlabel("Heads count")
+#
+#     plt.show()
