@@ -1,1 +1,15 @@
-# write your code here
+import random
+
+
+def flip_coin(num_cases: int = 10000) -> dict:
+    results = {i: 0 for i in range(11)}
+    for _ in range(num_cases):
+        heads = 0
+        for _ in range(10):
+            if random.random() < 0.5:
+                heads += 1
+        results[heads] += 1
+    total_cases = float(num_cases)
+    for key, value in results.items():
+        results[key] = (value / total_cases) * 100
+    return results
