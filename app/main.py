@@ -3,7 +3,7 @@ import numpy as np
 import random
 
 
-def flip_coin(trials=10000) -> dict:
+def flip_coin(trials: int = 10000) -> dict:
     result = {i: 0 for i in range(11)}
 
     for flip in range(trials):
