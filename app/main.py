@@ -1,10 +1,6 @@
 import random
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib
-
-
-matplotlib.use("TkAgg")
 
 
 def flip_coin() -> dict:
