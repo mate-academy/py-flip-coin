@@ -3,8 +3,9 @@ from collections import Counter
 import matplotlib.pyplot as plt
 
 
-def flip_coin(total_flips: int) -> dict:
+def flip_coin() -> dict:
     list_of_flipping = []
+    total_flips = 10000
     for _ in range(total_flips):
         list_of_flipping.append(
             sum(random.randint(0, 1) for _ in range(10)))
@@ -20,14 +21,16 @@ def draw_gaussian_distribution_graph(distribution: dict) -> None:
     values = [distribution[k] for k in keys]
 
     plt.figure(figsize=(10, 5))
-    plt.plot(keys, values, linestyle='-', color='blue', label='Heads distribution')
+    plt.plot(keys, values,
+             linestyle="-", color="blue",
+             label="Heads distribution")
     plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage (%)")
-    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.grid(axis="y", linestyle="--", alpha=0.7)
     plt.xticks(range(11))
     plt.show()
 
 
-result_dict = flip_coin(10000)
+result_dict = flip_coin()
 draw_gaussian_distribution_graph(result_dict)
