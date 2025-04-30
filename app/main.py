@@ -2,7 +2,7 @@ import random
 import matplotlib.pyplot as plt
 
 
-def flip_coin():
+def flip_coin() -> dict:
     numer_of_flips = 10
     num_experiments = 10000
     result = {}
@@ -22,7 +22,7 @@ def flip_coin():
     return updated_results
 
 
-def draw_gaussian_distribution_graph():
+def draw_gaussian_distribution_graph() -> None:
     prob_percentage = flip_coin()
     x_points = [key for key in prob_percentage]
     y_points = [value for value in prob_percentage.values()]
