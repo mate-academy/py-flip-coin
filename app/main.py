@@ -20,4 +20,3 @@ def flip_coin() -> dict:
         result[key] = result[key] / 10_000 * 100
 
     return result
-
