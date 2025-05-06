@@ -21,7 +21,7 @@ def draw_gaussian_distribution_graph() -> None:
     y = list(date_heads.values())
     plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
-    plt.xlabel("Drop percentage %")
+    plt.ylabel("Drop percentage %")
     plt.plot(x, y, color="blue")
 
 draw_gaussian_distribution_graph()
