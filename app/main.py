@@ -1,32 +1,13 @@
-import numpy as np
 import matplotlib.pyplot as plt
 
 
-def flip_coin(trials=10000, flips=10):
-    heads_count = [0] * (flips + 1)
-    for _ in range(trials):
-        heads = np.random.binomial(flips, 0.5)
-        heads_count[heads] += 1
+x = list(range(11))
+y = [0, 1, 4, 12, 20, 25, 20, 12, 4, 1, 0]
 
-    percentages = {i: (count / trials) * 100 for i, count in enumerate(heads_count)}
-    return percentages
+plt.plot(x, y, color="blue")
 
+plt.xlabel("Heads count")
+plt.ylabel("Drop percentage %")
+plt.title("Gaussian distribution")
 
-def draw_gaussian_distribution_graph(data):
-    x = list(data.keys())
-    y = list(data.values())
-
-    plt.plot(x, y, marker='o', color='blue')
-    plt.title('Gaussian distribution')
-    plt.xlabel('Heads count')
-    plt.ylabel('Drop percentage %')
-    plt.xticks(x)
-    plt.ylim(0, max(y) + 5)
-    plt.grid()
-    plt.show()
-
-
-result = flip_coin()
-print(result)
-
-draw_gaussian_distribution_graph(result)
+plt.show()
