@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 CASES_NUMBER = 10000
 FLIP_BY_CASE = 10
 
+
 # 1 - head, 0 - tail
 def flip_coin() -> dict:
     report = {}
@@ -23,14 +24,14 @@ def flip_coin() -> dict:
 
 
 def draw_gaussian_distribution_graph(report: dict) -> None:
-    x = []
-    y = []
+    x_values = []
+    y_values = []
 
-    for k, v in report.items():
-        x.append(k)
-        y.append(v)
+    for key, value in report.items():
+        x_values.append(key)
+        y_values.append(value)
 
-    plt.plot(x, y)
+    plt.plot(x_values, y_values)
 
     plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
@@ -46,4 +47,3 @@ def draw_gaussian_distribution_graph(report: dict) -> None:
 
 
 draw_gaussian_distribution_graph(flip_coin())
-
