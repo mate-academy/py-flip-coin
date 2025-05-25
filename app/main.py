@@ -3,10 +3,10 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 
 
-def flip_coin(trials: int = 10000) -> dict:
+def flip_coin(trials: int = 10000) -> dict[int, float]:
     """
-    Imitates flipping a coin 10 times in each trial, repeated for given number of trials.
-    Returns a dictionary with the percentage of how many times each count of heads appeared.
+    Simulates flipping a coin 10 times in each trial.
+    Returns a dict with the percentage of each number of heads.
     """
     results = defaultdict(int)
 
@@ -17,24 +17,18 @@ def flip_coin(trials: int = 10000) -> dict:
     return {k: round(v / trials * 100, 2) for k, v in sorted(results.items())}
 
 
-def draw_gaussian_distribution_graph(distribution: dict):
+def draw_gaussian_distribution_graph(distribution: dict[int, float]) -> None:
     """
     Draws a Gaussian distribution graph from the distribution of heads.
     """
-    x = list(distribution.keys())
-    y = list(distribution.values())
+    count_heads = list(distribution.keys())
+    percentage = list(distribution.values())
 
     plt.figure(figsize=(10, 5))
-    plt.plot(x, y, marker='o', linestyle='-', color='blue')
+    plt.plot(count_heads, percentage, marker="o", linestyle="-", color="blue")
     plt.title("Distribution of Heads in 10 Coin Flips (10,000 trials)")
     plt.xlabel("Number of Heads")
     plt.ylabel("Percentage (%)")
     plt.grid(True)
-    plt.xticks(range(11))  # 0 through 10
+    plt.xticks(range(11))
     plt.show()
-
-
-if __name__ == "__main__":
-    result = flip_coin()
-    print(result)
-    draw_gaussian_distribution_graph(result)
