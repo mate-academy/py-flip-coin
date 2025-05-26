@@ -1,6 +1,7 @@
 import random
 import matplotlib.pyplot as plt
 
+
 def flip_coin() -> dict[int, float]:
     trials = 10000
     results = {i: 0 for i in range(11)}
@@ -13,6 +14,7 @@ def flip_coin() -> dict[int, float]:
         results[key] = round((results[key] / trials) * 100, 2)
 
     return results
+
 
 def draw_gaussian_distribution_graph() -> None:
     data = flip_coin()
