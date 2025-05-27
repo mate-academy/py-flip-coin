@@ -1,28 +1,30 @@
 import random
-from matplotlib import pyplot as plt
+from matplotlib import pyplot
+import numpy
 
 
 def flip_coin() -> dict:
-    results = {amount: 0 for amount in range(11)}
-    coin = ["head", "tail"]
+    results = {i: 0 for i in range(11)}
 
     for _ in range(10000):
-        head = 0
+        heads = 0
         for _ in range(10):
-            result = random.choices(coin)
-            if result == "head":
-                head += 1
-        results[head] += 1
+            if random.randint(0, 1) == 1:
+                heads += 1
+        results[heads] += 1
 
-    statistics = {amount: round((results[amount] / 10000) * 100, 2)
-                  for amount in results}
+        total_cases = sum(results.values())
 
-    x = list(statistics.keys())
-    y = list(statistics.values())
-    plt.plot(x, y)
-    plt.title("Gaussian distribution")
-    plt.xlabel("Heads count")
-    plt.ylabel("Drop percentage %")
-    plt.show()
+    for key in results:
+        results[key] = (results[key] / total_cases) * 100
+    return results
 
-    return statistics
+
+def draw_gaussian_distribution_graph(results: dict) -> None:
+    head_numbers = numpy.array(list(results.keys()))
+    percentage = numpy.array(list(results.values()))
+    pyplot.title("Gaussian distribution", loc="left")
+    pyplot.xlabel("Heads count")
+    pyplot.ylabel("Drop percentage %")
+    pyplot.plot(head_numbers, percentage)
+    pyplot.show()
