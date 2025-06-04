@@ -26,6 +26,3 @@ def draw_gaussian_distribution_graph(results: dict[int, float]) -> None:
     plt.title("Distribution of heads in 10 coin flips")
     plt.grid(True)
     plt.show()
-
-distribution = flip_coin()
-draw_gaussian_distribution_graph(distribution)
