@@ -15,7 +15,7 @@ def draw_gaussian_distribution_graph(data: dict) -> None:
     heads_counts = list(data.keys())
     percentages = list(data.values())
     plt.figure()
-    plt.bar( heads_counts, percentages)
+    plt.bar(heads_counts, percentages)
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage%")
     plt.title("Gaussian distribution")
