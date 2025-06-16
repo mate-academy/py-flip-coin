@@ -10,7 +10,7 @@ def flip_coin() -> dict:
     for _ in range(10000):
         flips = random.choices(coin_side, k=10)
         res = flips.count("heads")
-        data_collector[res] += 100 / 1000
+        data_collector[res] += 10 / 1000
 
     return {key: round(value, 2) for key, value in data_collector.items()}
 
