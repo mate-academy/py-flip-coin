@@ -31,12 +31,10 @@ def draw_gaussian_distribution_graph(distribution: dict) -> None:
     # y-axis: percentages
     y = list(distribution.values())
 
-    plt.bar(x, y, color="skyblue", edgecolor="black")
-
-    plt.title("Distribution of Heads in 10 Coin Flips (approx Gaussian)")
-    plt.xlabel("Number of Heads")
-    plt.ylabel("Percentage of Occurrences (%)")
-    plt.grid(axis="y", linestyle="--", alpha=0.7)
-
-    plt.xticks(range(0, 11))  # 0 to 10 heads
+    plt.title("Gaussian distribution")
+    plt.xlabel("Heads count")
+    plt.ylabel("Drop percentage %")
+    plt.plot(x, y, color="blue", linestyle="-", linewidth=2)
+    plt.xlim(0, 10)
+    plt.ylim(0, 100)
     plt.show()
