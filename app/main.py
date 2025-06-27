@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def flip_coin() -> dict:
     num_experiments = 10000
     num_flips = 10
-    results = {k: 0 for k in range(num_flips + 1)}
+    results = {key: 0 for key in range(num_flips + 1)}
 
     for _ in range(num_experiments):
         heads_count = 0
@@ -15,8 +15,8 @@ def flip_coin() -> dict:
         results[heads_count] += 1
 
     # convert to percentages
-    for k in results:
-        results[k] = (results[k] / num_experiments) * 100
+    for key in results:
+        results[key] = (results[key] / num_experiments) * 100
 
     return results
 
