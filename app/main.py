@@ -22,19 +22,12 @@ def flip_coin() -> dict:
 
 
 def draw_gaussian_distribution_graph(distribution: dict) -> None:
-    """
-    Plots the distribution of number of heads in 10 coin flips
-    as a bar graph with labels and a grid.
-    """
-    # x-axis: number of heads (0 to 10)
     x = list(distribution.keys())
-    # y-axis: percentages
     y = list(distribution.values())
 
+    plt.figure(figsize=(10, 6))
     plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage %")
-    plt.plot(x, y, color="blue", linestyle="-", linewidth=2)
-    plt.xlim(0, 10)
-    plt.ylim(0, 100)
+    plt.plot(x, y, color="blue")
     plt.show()
