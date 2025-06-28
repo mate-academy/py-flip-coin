@@ -1,4 +1,5 @@
 import random
+import matplotlib.pyplot as plt
 
 
 EXPERIMENTS_COUNT = 10000
@@ -37,3 +38,21 @@ def flip_coin_n_rounds(attempts: int) -> dict[int, float]:
 
 def flip_coin() -> dict[int, float]:
     return flip_coin_n_rounds(EXPERIMENTS_COUNT)
+
+
+def draw_gaussian_distribution_graph() -> None:
+    experiments_results = flip_coin()
+    sorted_experiments_results = sorted(experiments_results.items())
+
+    xpoints = []
+    ypoints = []
+
+    for key, value in sorted_experiments_results:
+        xpoints.append(key)
+        ypoints.append(value)
+
+    plt.plot(xpoints, ypoints)
+    plt.xlabel("Heads count")
+    plt.ylabel("Drop percentage, %")
+    plt.title("Gaussian distribution")
+    plt.show()
