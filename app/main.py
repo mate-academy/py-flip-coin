@@ -17,7 +17,7 @@ def flip_coin() -> dict:
     }
     for i in range(10001):
         head_percentage = 0
-        for j in range(10):
+        for _ in range(10):
             coin = ["head", "tail"]
             flip = random.choice(coin)
             if flip == "head":
@@ -25,9 +25,4 @@ def flip_coin() -> dict:
         dict_of_head_percentage[head_percentage] += 1
     for _ in range(11):
         dict_of_head_percentage[_] = (dict_of_head_percentage[_] / 10000) * 100
-
     return dict_of_head_percentage
-
-
-
-print(flip_coin())
