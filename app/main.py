@@ -13,7 +13,7 @@ def flip_coin() -> dict:
         7: 0,
         8: 0,
         9: 0,
-        10: 0
+        10: 0,
     }
     for i in range(10001):
         head_percentage = 0
