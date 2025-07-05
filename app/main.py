@@ -2,9 +2,9 @@ import random
 from typing import Dict
 from collections import Counter
 import matplotlib
-matplotlib.use("Agg")  # non-GUI backend
 import matplotlib.pyplot as plt
 
+matplotlib.use("Agg")
 
 def flip_coin(trials: int = 10000) -> Dict[int, float]:
     """
