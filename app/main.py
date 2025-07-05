@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 
 matplotlib.use("Agg")
 
+
 def flip_coin(trials: int = 10000) -> Dict[int, float]:
     """
     Simulate flipping a coin 10 times in 10,000 trials.
