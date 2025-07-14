@@ -7,8 +7,8 @@ def flip_coin(trials: int = 10000) -> dict:
     for _ in range(trials):
         heads = sum(random.choice([0, 1]) for _ in range(10))
         results[heads] += 1
-    for k in results:
-        results[k] = round((results[k] / trials) * 100, 2)
+    for key in results:
+        results[key] = round((results[key] / trials) * 100, 2)
     return results
 
 
