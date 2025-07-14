@@ -13,13 +13,13 @@ def flip_coin(trials: int = 10000) -> dict:
 
 
 def draw_gaussian_distribution_graph(distribution: dict) -> None:
-    x = list(distribution.keys())
-    y = list(distribution.values())
+    head_counts = list(distribution.keys())
+    percentages = list(distribution.values())
 
-    plt.bar(x, y, color='skyblue', edgecolor='black')
+    plt.bar(head_counts, percentages, color="skyblue", edgecolor="black")
     plt.title("Distribution of Heads in 10 Coin Flips (10,000 Trials)")
     plt.xlabel("Number of Heads")
     plt.ylabel("Percentage (%)")
     plt.xticks(range(11))
-    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.grid(axis="y", linestyle="--", alpha=0.7)
     plt.show()
