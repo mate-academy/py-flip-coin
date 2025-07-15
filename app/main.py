@@ -14,7 +14,7 @@ def make_graph(data: dict[int, float]) -> None:
     plt.show()
 
 
-def flip_coin():
+def flip_coin() -> dict[int, float]:
     results = {
         0: 0,
         1: 0,
@@ -30,7 +30,7 @@ def flip_coin():
     }
     for index in range(10_000):
         amount = 0
-        for k in range(10):
+        for _ in range(10):
             amount += random.randint(0, 1)
         results[amount] += 1
 
