@@ -18,13 +18,14 @@ def flip_coin(num_flips: int = 10, num_cases: int = 10000) -> Dict[int, float]:
 
 
 def draw_gaussian_distribution_graph(distribution: Dict[int, float]) -> None:
-    x: List[int] = list(distribution.keys())
-    y: List[float] = list(distribution.values())
+    head_counts: List[int] = list(distribution.keys())
+    percentages: List[float] = list(distribution.values())
 
-    sns.set(style="whitegrid")
+    sns.set_theme(style="whitegrid")
     plt.figure(figsize=(10, 6))
-    sns.barplot(x=x, y=y, palette="viridis")
-    plt.title("Distribution of Number of Heads in 10 Coin Flips (10,000 Cases)", fontsize=14)
+    sns.barplot(x=head_counts, y=percentages, palette="viridis")
+    plt.title("Distribution of Number of Heads in 10 Coin Flips (10,000 Cases)",
+              fontsize=14)
     plt.xlabel("Number of Heads", fontsize=12)
     plt.ylabel("Percentage of Cases (%)", fontsize=12)
     plt.tight_layout()
@@ -35,4 +36,3 @@ if __name__ == "__main__":
     result: Dict[int, float] = flip_coin()
     print(result)
     draw_gaussian_distribution_graph(result)
-
