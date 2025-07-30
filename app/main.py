@@ -1,6 +1,7 @@
 import random
 from collections import defaultdict
 
+
 def flip_coin() -> dict:
     results = defaultdict(int)
     total_simulations = 10000
