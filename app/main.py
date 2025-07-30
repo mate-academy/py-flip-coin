@@ -14,7 +14,7 @@ def flip_coin(num_flips: int = 10, num_cases: int = 10000) -> Dict[int, float]:
 
     counts: Counter[int] = Counter(results)
     percentages: Dict[int, float] = {
-        k: round((v / num_cases) * 100, 2) 
+        k: round((v / num_cases) * 100, 2)
         for k, v in sorted(counts.items())
     }
     return percentages
