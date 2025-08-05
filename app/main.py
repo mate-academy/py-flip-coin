@@ -14,14 +14,12 @@ def flip_coin() -> dict:
     return {"heads": heads, "tails": tails}
 
 
-results = {}
+results = {i: 0 for i in range(11)}
+
 for _ in range(10000):
     res = flip_coin()
     heads_count = res["heads"]
-    if heads_count in results:
-        results[heads_count] += 1
-    else:
-        results[heads_count] = 1
+    results[heads_count] += 1
 
 
 def draw_gaussian_distribution_graph(results: dict) -> None:
