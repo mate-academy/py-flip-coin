@@ -3,23 +3,20 @@ import matplotlib.pyplot as plt
 
 
 def flip_coin() -> dict:
-    heads = 0
-    tails = 0
-    for _ in range(10):
-        flip = random.randint(0, 1)
-        if flip == 1:
-            heads += 1
-        else:
-            tails += 1
-    return {"heads": heads, "tails": tails}
+    experiments = 10000
+    results = {i: 0 for i in range(11)}
+
+    for _ in range(experiments):
+        heads = 0
+        for _ in range(10):
+            if random.randint(0, 1) == 1:
+                heads += 1
+        results[heads] += 1
 
 
-results = {i: 0 for i in range(11)}
-
-for _ in range(10000):
-    res = flip_coin()
-    heads_count = res["heads"]
-    results[heads_count] += 1
+    for k in results:
+        results[k] = (results[k] / experiments) * 100
+    return results
 
 
 def draw_gaussian_distribution_graph(results: dict) -> None:
@@ -30,7 +27,11 @@ def draw_gaussian_distribution_graph(results: dict) -> None:
     plt.xlabel("Number of heads in 10 coin flips")
     plt.ylabel("Frequency")
     plt.title("Distribution of the number of eagles in 10,000 simulations")
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.tight_layout()
     plt.show()
 
 
-draw_gaussian_distribution_graph(results)
+if __name__ == "__main__":
+    results = flip_coin()
+    draw_gaussian_distribution_graph(results)
