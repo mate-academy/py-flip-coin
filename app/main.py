@@ -13,21 +13,20 @@ def flip_coin() -> dict:
                 heads += 1
         results[heads] += 1
 
-
-    for k in results:
-        results[k] = (results[k] / experiments) * 100
+    for key in results:
+        results[key] = (results[key] / experiments) * 100
     return results
 
 
 def draw_gaussian_distribution_graph(results: dict) -> None:
     keys = sorted(results.keys())
-    values = [results[k] for k in keys]
+    values = [results[key] for key in keys]
     plt.bar(keys, values, color="skyblue")
 
     plt.xlabel("Number of heads in 10 coin flips")
     plt.ylabel("Frequency")
     plt.title("Distribution of the number of eagles in 10,000 simulations")
-    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.grid(axis="y", linestyle="-", alpha=0.7)
     plt.tight_layout()
     plt.show()
 
