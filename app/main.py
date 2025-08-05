@@ -13,6 +13,7 @@ def flip_coin() -> dict:
             tails += 1
     return {"heads": heads, "tails": tails}
 
+
 results = {}
 for _ in range(10000):
     res = flip_coin()
@@ -32,4 +33,6 @@ def draw_gaussian_distribution_graph(results: dict) -> None:
     plt.ylabel("Frequency")
     plt.title("Distribution of the number of eagles in 10,000 simulations")
     plt.show()
+
+
 draw_gaussian_distribution_graph(results)
