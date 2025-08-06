@@ -5,9 +5,9 @@ def flip_coin() -> dict:
     res = {}
     num_of_cases = 10_000
     possible_heads = 10
-    for i in range(num_of_cases):
+    for _ in range(num_of_cases):
         head = 0
-        for j in range(possible_heads):
+        for _ in range(possible_heads):
             head += randint(0, 1)
         if head in res.keys():
             res[head] += 1
