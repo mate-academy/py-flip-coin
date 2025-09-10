@@ -9,7 +9,10 @@ except Exception:
     plt = None
 
 
-def flip_coin(trials: int = 100_000, flips_per_trial: int = 10) -> Dict[int, float]:
+def flip_coin(
+    trials: int = 100_000,
+    flips_per_trial: int = 10
+) -> Dict[int, float]:
     if trials <= 0:
         raise ValueError("trials must be positive")
     if flips_per_trial <= 0:
