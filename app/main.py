@@ -4,7 +4,7 @@ from random import choice
 def get_one_flipping_experiment_result() -> int:
     result = 0
     for i in range(10):
-        if choice(['Heads', 'Tails']) == "Heads":
+        if choice(["Heads", "Tails"]) == "Heads":
             result += 1
     return result
 
