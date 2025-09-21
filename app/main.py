@@ -31,4 +31,3 @@ def draw_gaussian_distribution_graph(
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage %")
     plt.show()
-
