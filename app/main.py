@@ -18,10 +18,10 @@ def flip_coin(trials: int = 10000) -> dict[int, float]:
 
 
 def draw_gaussian_distribution_graph(percentages: dict) -> None:
-    x = sorted(percentages.keys())
-    y = [percentages[k] for k in x]
+    sorted_keys = sorted(percentages.keys())
+    percentages_values = [percentages[k] for k in sorted_keys]
 
-    plt.bar(x, y, color="blue", edgecolor="black")
+    plt.bar(sorted_keys, percentages_values, color="blue", edgecolor="black")
 
     plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
