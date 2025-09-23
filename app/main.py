@@ -29,5 +29,4 @@ def draw_gaussian_distribution_graph(percentages: dict) -> None:
     plt.xticks(range(0, 11))
     plt.grid(axis="y", alpha=0.3)
 
-
     plt.show()
