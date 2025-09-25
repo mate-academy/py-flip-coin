@@ -15,8 +15,8 @@ def flip_coin() -> dict:
             heads_counts[bird] += 1
         else :
             heads_counts[bird] = 1
-    for i, x in heads_counts.items():
-        heads_counts[i] = x / 10000 * 100
+    for key, value in heads_counts.items():
+        heads_counts[key] = value / 10000 * 100
     return heads_counts
 
 
