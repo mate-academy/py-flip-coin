@@ -18,5 +18,4 @@ def draw_gaussian_distribution_graph(num: int = 10) -> None:
     plt.show()
 
 
-# Example
 draw_gaussian_distribution_graph()
