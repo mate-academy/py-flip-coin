@@ -19,7 +19,7 @@ def flip_coin() -> dict[int, float]:
     return results
 
 
-def draw_gaussian_distribution_graph(results) -> None:
+def draw_gaussian_distribution_graph(results: dict[int, float]) -> None:
     keys = list(results.keys())
     values = list(results.values())
 
