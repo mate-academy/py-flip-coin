@@ -3,7 +3,7 @@ import random
 import matplotlib.pyplot as plt
 
 
-def flip_coin():
+def flip_coin() -> dict[int, float]:
     trials = 10000
     results = {i: 0 for i in range(11)}  # Possible heads: 0 to 10
 
@@ -19,7 +19,7 @@ def flip_coin():
     return results
 
 
-def draw_gaussian_distribution_graph(results):
+def draw_gaussian_distribution_graph(results) -> None:
     keys = list(results.keys())
     values = list(results.values())
 
