@@ -1,4 +1,6 @@
 import random
+import matplotlib.pyplot as plt
+
 
 def flip_coin() -> dict[int, float]:
     counts = {key: 0 for key in range(11)}
@@ -12,10 +14,23 @@ def flip_coin() -> dict[int, float]:
         counts[how_many] += 1
     result = {}
     for key, value in counts.items():
-        if key < 1:
-            new_value = 0
-        else:
-            new_value = round((value / 10000) * 100, 2)
+        new_value = round((value / 10000) * 100, 2)
         result[key] = new_value
     return result
-flip_coin()
+
+result_dict = flip_coin()
+
+def draw_gaussian_distribution_graph(positions: dict[int, float]) -> None:
+
+    xpoint = list(positions.keys())
+    ypoint = list(positions.values())
+
+    plt.plot(xpoint, ypoint)
+
+    plt.xlabel('Heads count')
+    plt.ylabel('Drop percentage %')
+
+    plt.title('Gaussian distribution')
+    plt.show()
+
+draw_gaussian_distribution_graph(result_dict)
