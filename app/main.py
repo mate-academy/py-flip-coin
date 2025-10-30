@@ -1,6 +1,5 @@
 import random
 
-import numpy as np
 from matplotlib import pyplot as plt
 
 
@@ -17,7 +16,8 @@ def flip_coin() -> dict:
     result = {k: coin_dict[k] for k in sorted(coin_dict)}
     return result
 
-def draw_gaussian_distribution_graph():
+
+def draw_gaussian_distribution_graph() -> None:
     points = flip_coin()
     point_x = []
     point_y = []
@@ -26,10 +26,7 @@ def draw_gaussian_distribution_graph():
         point_x.append(elem)
         point_y.append(points[elem])
 
-    x.point = np.array(point_x)
-    y.point = np.array(point_y)
-
-    plt.plot(x.point, y.point)
+    plt.plot(point_x, point_y)
     plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
     plt.ylabel("Drope percentage %")
