@@ -1,5 +1,4 @@
 import random
-from app.plotting import draw_distribution
 
 
 def flip_once() -> int:
@@ -11,10 +10,14 @@ def flip_once() -> int:
     return heads
 
 
-def flip_coin() -> list:
-    results = []
-    for i in range(10000):
-        results.append(flip_once())
+def flip_coin() -> dict:
+    results = {i: 0 for i in range(11)}
+    for _ in range(10000):
+        heads = flip_once()
+        results[heads] += 1
+
+    for key in results:
+        results[key] = round(results[key] / 10000 * 100, 2)
     return results
 
 
@@ -37,4 +40,3 @@ if __name__ == "__main__":
     counts = count_results(results)
     percentages = to_percentages(counts, len(results))
     print(percentages)
-    draw_distribution(percentages)
