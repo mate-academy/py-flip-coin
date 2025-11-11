@@ -2,11 +2,15 @@ import random
 from collections import Counter
 import matplotlib.pyplot as plt
 
+
 def flip_coin() -> dict:
     list_with_variant = ["heads", "tails"]
     result_dict = {}
     for _ in range(10000):  # 10 000 експериментів
-        result_of_flip_coin = [random.choice(list_with_variant) for _ in range(10)]
+        result_of_flip_coin = [
+            random.choice(list_with_variant)
+            for _ in range(10)
+        ]
         result_dict_of_ten_flip = Counter(result_of_flip_coin)
         heads_count = result_dict_of_ten_flip.get("heads", 0)
         result_dict[heads_count] = result_dict.get(heads_count, 0) + 1
@@ -19,11 +23,11 @@ def flip_coin() -> dict:
 
 
 # Отримуємо дані для осей
-x = list(flip_coin().keys())   # кількість орлів
-y = list(flip_coin().values()) # відсотки
+xline = list(flip_coin().keys())  # кількість орлів
+yline = list(flip_coin().values())  # відсотки
 
 # Створюємо графік
-plt.bar(x, y, color="skyblue", edgecolor="black")
+plt.bar(xline, yline, color="skyblue", edgecolor="black")
 
 # Підписи осей і заголовок
 plt.xlabel("Кількість орлів (heads) із 10 підкидань")
