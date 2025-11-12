@@ -30,7 +30,7 @@ def draw_gaussian_distribution_graph(trials: dict[int, float]) -> None:
     plt.plot(x, y)
 
     plt.ylim(0, 100)
-    plt.xlim(0, 10)
+    # plt.xlim(0, 10)
     plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage %")
