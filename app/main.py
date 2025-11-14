@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 
 def flip_coin() -> dict:
+
     result_dict = {i: 0 for i in range(11)}
     number_of_values = 10000
 
