@@ -18,7 +18,7 @@ def flip_coin() -> dict:
     return result
 
 
-def draw_gaussian_distribution_graph() -> dict:
+def draw_gaussian_distribution_graph():
     x = [1, 2, 3, 4, 5]
     y = [10, 3, 8, 12, 5]
 
