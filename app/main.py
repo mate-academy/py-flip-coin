@@ -18,11 +18,11 @@ def flip_coin(trials: int = 10000) -> dict[int, float]:
 def draw_gaussian_distribution_graph() -> None:
     distribution = flip_coin()
 
-    x = sorted(distribution.keys())
-    y = [distribution[k] for k in x]
+    xn = sorted(distribution.keys())
+    yn = [distribution[k] for k in xn]
 
     plt.figure()
-    plt.plot(x, y, linewidth=2)
+    plt.plot(xn, yn, linewidth=2)
     plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage %")
