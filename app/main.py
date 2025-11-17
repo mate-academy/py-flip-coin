@@ -6,7 +6,8 @@ def flip_coin(trials: int = 10000) -> dict:
     counts = Counter()
 
     for _ in range(trials):
-        heads = sum(random.choice([0, 1]) for _ in range(10))  # 0 = tails, 1 = heads
+        heads = sum(random.
+                    choice([0, 1]) for _ in range(10))  # 0 = tails, 1 = heads
         counts[heads] += 1
 
     # Переводимо у відсотки
@@ -18,5 +19,3 @@ def flip_coin(trials: int = 10000) -> dict:
 
     # Сортуємо за ключами
     return dict(sorted(percentages.items()))
-
-
