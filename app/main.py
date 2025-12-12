@@ -13,7 +13,7 @@ def flip_coin() -> dict:
         results[heads] += 1
 
     for key in results:
-        results[key] = round(results[k] / cases * 100, 2)
+        results[key] = round(results[key] / cases * 100, 2)
 
     return results
 
