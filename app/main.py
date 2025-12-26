@@ -4,7 +4,10 @@ import numpy as np
 
 
 def flip_coin() -> dict:
-    result = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0}
+    result = {
+        0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0,
+        7: 0, 8: 0, 9: 0, 10: 0
+    }
     for _ in range(10000):
         ten_flips = 0
         for _ in range(10):
@@ -16,6 +19,7 @@ def flip_coin() -> dict:
     for key, value in result.items():
         result[key] = round(value / 100, 2)
     return result
+
 
 def draw_gaussian_distribution_graph() -> None:
     y_points = np.array(list(flip_coin().values()))
