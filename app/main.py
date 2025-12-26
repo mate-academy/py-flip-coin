@@ -20,6 +20,10 @@ def flip_coin() -> dict:
 def draw_gaussian_distribution_graph() -> None:
     y_points = np.array(list(flip_coin().values()))
     x_points = np.array(list(flip_coin().keys()))
+    plt.ylim([0, 100])
+    plt.xlim([0, 10])
+    plt.yticks(np.arange(0, 101, step=10))
+    plt.xticks(np.arange(0, 11, step=1))
 
     plt.plot(x_points, y_points)
     plt.title("Gaussian distribution")
