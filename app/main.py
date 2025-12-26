@@ -15,4 +15,12 @@ def flip_coin() -> dict:
     print(result)
     return result
 
-flip_coin()
+def draw_gaussian_distribution_graph() -> None:
+    y_points = np.array(list(flip_coin().values()))
+    x_points = np.array(list(flip_coin().keys()))
+
+    plt.plot(x_points, y_points)
+    plt.title("Gaussian distribution")
+    plt.xlabel("Heads count")
+    plt.ylabel("Drop percentage %")
+    plt.show()
