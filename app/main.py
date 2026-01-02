@@ -18,13 +18,14 @@ def flip_coin(trials: int = 10000, flips: int = 10) -> dict:
 def draw_gaussian_distribution_graph(data: dict, max_width: int = 50) -> None:
     max_pct = max(data.values()) if data.values() else 1
 
-    print(f"\nРозподіл результатів (масштабований ASCII графік):")
+    print("\nРозподіл результатів (масштабований ASCII графік):")
     for heads, percentage in data.items():
         bar_length = int((percentage / max_pct) * max_width)
-        bar = "█" * bar_length
-        print(f"{heads:2}: {bar} {percentage}%")
+        visual_bar = "█" * bar_length
+        print(f"{heads:2}: {visual_bar} {percentage}%")
 
 
-stats = flip_coin(trials=10000, flips=10)
-print(stats)
-draw_gaussian_distribution_graph(stats)
+if __name__ == "__main__":
+    stats = flip_coin(trials=10000, flips=10)
+    print(stats)
+    draw_gaussian_distribution_graph(stats)
