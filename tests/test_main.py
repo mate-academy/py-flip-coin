@@ -1,3 +1,4 @@
+
 import pytest
 
 from app.main import flip_coin
