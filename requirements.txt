@@ -6,3 +6,5 @@ pep8-naming
 pytest
 matplotlib~=3.10.1
 numpy~=2.2.4
+seaborn~=0.13.0
+
