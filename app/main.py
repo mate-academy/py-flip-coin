@@ -3,11 +3,13 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 
 
-def flip_coin(number_of_flips: int = 10, number_of_trials: int = 10000) -> dict[int, float]:
+def flip_coin(number_of_flips: int = 10,
+              number_of_trials: int = 10000) -> dict[int, float]:
     results_counter = defaultdict(int)
 
     for _ in range(number_of_trials):
-        heads_count = sum(random.choice([0, 1]) for _ in range(number_of_flips))
+        heads_count = sum(random.choice([0, 1])
+                          for _ in range(number_of_flips))
         results_counter[heads_count] += 1
 
     percentages = {
