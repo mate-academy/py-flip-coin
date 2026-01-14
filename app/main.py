@@ -12,7 +12,7 @@ def flip_coin(num_flips: int = 10,
         results[heads_count] += 1
 
     percentages = {num: round(v / num_trials * 100, 2)
-                   for num, vit in results.items()}
+                   for num, vitr in results.items()}
 
     for num in range(num_flips + 1):
         if num not in percentages:
