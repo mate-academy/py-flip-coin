@@ -16,7 +16,7 @@ def flip_coin(num_flips: int = 10,
 
     for num in range(num_flips + 1):
         if num not in percentages:
-            percentages[k] = 0.0
+            percentages[num] = 0.0
 
     return dict(sorted(percentages.items()))
 
@@ -25,7 +25,7 @@ def draw_gaussian_distribution_graph(distribution: dict[int, float]) -> None:
     list_1 = list(distribution.keys())
     list2 = list(distribution.values())
 
-    plt.bar(list_1, list2, color='skyblue')
+    plt.bar(list_1, list2, color="skyblue")
     plt.xlabel("Number of heads in 10 flips")
     plt.ylabel("Percentage of trials (%)")
     plt.title("Distribution of Heads in 10 Coin Flips")
