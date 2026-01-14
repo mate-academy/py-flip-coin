@@ -3,37 +3,39 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 
 
-def flip_coin(num_flips: int = 10,
-              num_trials: int = 10000) -> dict[int, float]:
-    results = defaultdict(int)
+def flip_coin(number_of_flips: int = 10, number_of_trials: int = 10000) -> dict[int, float]:
+    results_counter = defaultdict(int)
 
-    for _ in range(num_trials):
-        heads_count = sum(random.choice([0, 1]) for _ in range(num_flips))
-        results[heads_count] += 1
+    for _ in range(number_of_trials):
+        heads_count = sum(random.choice([0, 1]) for _ in range(number_of_flips))
+        results_counter[heads_count] += 1
 
-    percentages = {num: round(v / num_trials * 100, 2)
-                   for num, vitr in results.items()}
+    percentages = {
+        number_of_heads: round(trial_count / number_of_trials * 100, 2)
+        for number_of_heads, trial_count in results_counter.items()
+    }
 
-    for num in range(num_flips + 1):
-        if num not in percentages:
-            percentages[num] = 0.0
+    # Убедимся, что все значения от 0 до number_of_flips есть
+    for heads_number in range(number_of_flips + 1):
+        if heads_number not in percentages:
+            percentages[heads_number] = 0.0
 
     return dict(sorted(percentages.items()))
 
 
 def draw_gaussian_distribution_graph(distribution: dict[int, float]) -> None:
-    list_1 = list(distribution.keys())
-    list2 = list(distribution.values())
+    heads_numbers = list(distribution.keys())
+    percentages_values = list(distribution.values())
 
-    plt.bar(list_1, list2, color="skyblue")
+    plt.bar(heads_numbers, percentages_values, color="skyblue")
     plt.xlabel("Number of heads in 10 flips")
     plt.ylabel("Percentage of trials (%)")
     plt.title("Distribution of Heads in 10 Coin Flips")
-    plt.xticks(list_1)
+    plt.xticks(heads_numbers)
     plt.show()
 
 
-# Example usage
+# Пример использования
 distribution = flip_coin()
 print(distribution)
 draw_gaussian_distribution_graph(distribution)
