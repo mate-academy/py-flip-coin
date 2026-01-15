@@ -1,4 +1,5 @@
 import random
+from matplotlib import pyplot as plt
 from collections import Counter
 
 
@@ -13,3 +14,21 @@ def flip_coin() -> dict:
         key: round(value / 10_000 * 100, 2)
         for key, value in count_mapping.items()
     }
+
+
+def draw_gaussian_distribution_graph():
+    data = flip_coin()
+
+    x = list(data.keys())
+    y = list(data.values())
+
+    plt.figure()
+    plt.plot(x, y, marker="o")
+    plt.xlabel("Number of heads in 10 flips")
+    plt.ylabel("Percentage")
+    plt.title("Coin flip distribution 10 000 experiments")
+    plt.grid(True)
+    plt.show()
+
+if __name__ == '__main__':
+    print(flip_coin())
