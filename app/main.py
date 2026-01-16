@@ -1,5 +1,4 @@
 import random
-from unittest import result
 
 import matplotlib.pyplot as plt
 
