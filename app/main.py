@@ -1,7 +1,4 @@
 import random
-import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib.ticker import PercentFormatter
 
 
 def flip_coin() -> dict:
@@ -28,18 +25,3 @@ def flip_coin() -> dict:
     for i in range(11):
         results[i] = results[i] / 100
     return results
-
-
-results = flip_coin()
-xpoints = np.array(list(results))
-ypoints = np.array(list(results.values()))
-
-plt.plot(xpoints, ypoints)
-plt.ylim(0, 100)
-plt.xticks(range(0, 11))
-plt.yticks(range(0, 101, 10))
-plt.gca().yaxis.set_major_formatter(PercentFormatter())
-plt.title("Percentege rate of heads in 10000 flip coins")
-plt.xlabel("Heads in 10 flips")
-plt.ylabel("Percentage of flips")
-plt.show()
