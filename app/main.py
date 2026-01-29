@@ -1,12 +1,7 @@
 import random
-import matplotlib.pyplot as plt
-import numpy as np
-import sys
-
 
 
 def flip_coin() -> dict:
-    result_dict = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0}
     right_dict = {0: random.uniform(0.1, 0.6),
                   1: random.uniform(0.6, 2.0),
                   2: random.uniform(2.0, 10.0),
