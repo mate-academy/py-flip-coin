@@ -1,1 +1,2 @@
-# write your code here
+def flip_coin():
+    pass
