@@ -30,6 +30,3 @@ def draw_gaussian_distribution_graph() -> None:
     plt.ylabel("Percentage of chance")
 
     plt.show()
-
-
-draw_gaussian_distribution_graph()
