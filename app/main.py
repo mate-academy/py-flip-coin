@@ -18,16 +18,16 @@ def flip_coin() -> dict:
     }
 
 
-def draw_gaussian_distribution_graph():
+def draw_gaussian_distribution_graph() -> None:
     result = flip_coin()
-    x = np.array([k for k, v in result.items()])
-    y = np.array([v for k, v in result.items()])
+    x_line = np.array([k for k, v in result.items()])
+    y_line = np.array([v for k, v in result.items()])
     plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage, %")
     plt.ylim(0, 100)
     plt.yticks(np.arange(0, 101, 10))
-    plt.plot(x, y)
+    plt.plot(x_line, y_line)
     plt.show()
 
 
