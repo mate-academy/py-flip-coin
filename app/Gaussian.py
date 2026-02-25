@@ -1,13 +1,14 @@
 import matplotlib.pyplot as plt
+from main import flip_coin
 
 
 def draw_gaussian_distribution_graph() -> None:
-    data = flip_coin()
+    distribution = flip_coin()
 
-    x = list(data.keys())
-    y = list(data.values())
+    heads_counts = list(distribution.keys())
+    percentages = list(distribution.values())
 
-    plt.plot(x, y)
+    plt.plot(heads_counts, percentages)
     plt.xlabel("Number of Heads (out of 10)")
     plt.ylabel("Percentage (%)")
     plt.title("Coin Flip Distribution (10 flips)")
