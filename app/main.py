@@ -1,39 +1,40 @@
 import random
-from typing import Dict
-import matplotlib.pyplot as plt
 
 
-def flip_coin(simulations: int = 10000) -> Dict[int, float]:
-    results = {i: 0 for i in range(11)}
-
-    for _ in range(simulations):
-        heads = 0
-        for _ in range(10):
+def flip_coin(num_flips: int = 10, num_trials: int = 10000) -> dict:
+    """Simulate flipping a coin `num_flips` times for `num_trials` trials."""
+    results_count = {i: 0 for i in range(num_flips + 1)}
+    for _ in range(num_trials):
+        heads_count = 0
+        for _ in range(num_flips):
             if random.random() < 0.5:
-                heads += 1
-        results[heads] += 1
+                heads_count += 1
+        results_count[heads_count] += 1
 
-    percentages = {}
-    for key, value in results.items():
-        percent = (value / simulations) * 100
-        percentages[key] = round(percent, 2)
+    results_percent = {
+        heads: round(count / num_trials * 100, 2)
+        for heads, count in results_count.items()
+    }
+    return results_percent
 
-    return percentages
 
+def draw_gaussian_distribution_graph(distribution: dict) -> None:
+    """Draw a bar graph showing the coin flip distribution."""
+    import matplotlib.pyplot as plt
 
-def draw_gaussian_distribution_graph() -> None:
-    data = flip_coin()
+    heads_numbers = list(distribution.keys())
+    percentages = list(distribution.values())
 
-    x = list(data.keys())
-    y = list(data.values())
-
-    plt.bar(x, y)
-    plt.xlabel("Number of Heads (0-10)")
-    plt.ylabel("Percentage (%)")
-    plt.title("Coin Flip Distribution (10 flips)")
+    plt.bar(heads_numbers, percentages)
+    plt.xlabel('Number of heads')
+    plt.ylabel('Percentage (%)')
+    plt.title('Distribution of heads in 10 coin flips')
+    plt.xticks(heads_numbers)
     plt.show()
 
 
-if __name__ == "__main__":
-    print(flip_coin())
-    draw_gaussian_distribution_graph()
+if __name__ == '__main__':
+    distribution = flip_coin()
+    print(distribution)
+    draw_gaussian_distribution_graph(distribution)
+    
