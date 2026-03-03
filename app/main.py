@@ -37,4 +37,3 @@ if __name__ == '__main__':
     distribution = flip_coin()
     print(distribution)
     draw_gaussian_distribution_graph(distribution)
-    
