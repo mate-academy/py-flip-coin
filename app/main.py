@@ -19,7 +19,7 @@ def flip_coin() -> dict[int, float]:
 
 
 def draw_gaussian_distribution_graph(ls: dict[int, float]) -> None:
-    plt.plot(ls.keys(), ls.values(), marker="o", linestyle='-')
+    plt.plot(ls.keys(), ls.values(), marker="o", linestyle="-")
     plt.title("Gaussian distribution")
     plt.ylabel("Drop percentage %")
     plt.xlabel("Heads count")
