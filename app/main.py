@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from typing import Dict
 
 
-def flip_coin(trials: int = 10000, flips: int = 10) -> Dict[int, float]:
+def flip_coin(trials: int = 10000, flips: int = 10) -> Dict:
     results: Dict[int, int] = {count: 0 for count in range(flips + 1)}
     for _ in range(trials):
         heads_count: int = sum(random.choice([0, 1]) for _ in range(flips))
