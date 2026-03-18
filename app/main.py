@@ -6,7 +6,7 @@ def flip_coin() -> dict:
     new_dict = {}
     for coin in range(10000):
         eagle = 0
-        for n in range(10):
+        for _ in range(10):
             flip = randint(0, 1)
             if flip == 1:
                 eagle += 1
@@ -21,9 +21,9 @@ def flip_coin() -> dict:
     return final_dict
 
 
-def draw_gaussian_distribution_graph():
+def draw_gaussian_distribution_graph() -> None:
     data = flip_coin()
-    x = list(data.keys())
-    y = list(data.values())
-    plt.plot(x, y, color="blue", marker="D")
+    heads_counts = list(data.keys())
+    percentages = list(data.values())
+    plt.plot(heads_counts, percentages, color="blue", marker="D")
     plt.show()
