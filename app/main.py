@@ -8,6 +8,6 @@ def flip_coin(n_series: int = 10000) -> dict:  # <- добавь типы
         for _ in range(10):
             heads += random.choice([0, 1])
         counts[heads] += 1
-    for k in counts:
-        counts[k] = round(counts[k] / n_series * 100, 2)
+    for key in counts:
+        counts[key] = round(counts[key] / n_series * 100, 2)
     return counts
