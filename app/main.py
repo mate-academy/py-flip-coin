@@ -15,20 +15,23 @@ def flip_coin(number_of_trials: int = 10000) -> dict[int, float]:
 
 
 def draw_gaussian_distribution_graph(data: dict[int, float]) -> None:
-    x = list(data.keys())
-    y = list(data.values())
-    plt.bar(x, y, width=0.6, color="C0", alpha=0.7)
-    plt.xlabel("Number of heads"), plt.ylabel("Percentage(%)"), plt.title("Bar_of_pain")
-    n = 10
-    p = 0.5
-    mu = n * p
-    sigma = math.sqrt(n * p * (1 - p))
-    x_smooth = np.linspace(min(x), max(x), 200)
-    gaussian_pdf = (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-(x_smooth - mu)**2 / (2 * sigma**2))
+    x_bar = list(data.keys())
+    y_bar = list(data.values())
+    plt.bar(x_bar, y_bar, width=0.6, color="C0", alpha=0.7)
+    (plt.xlabel("Number of heads"),
+     plt.ylabel("Percentage(%)"),
+     plt.title("Bar_of_pain"))
+    n_smth = 10
+    p_smth = 0.5
+    mu = n_smth * p_smth
+    sigma = math.sqrt(n_smth * p_smth * (1 - p_smth))
+    x_smooth = np.linspace(min(x_bar), max(x_bar), 200)
+    gaussian_pdf = ((1 / (sigma * np.sqrt(2 * np.pi)))
+                    * np.exp(-(x_smooth - mu)**2 / (2 * sigma**2)))
     scale_pdf = gaussian_pdf * 100
-    plt.plot(x_smooth, scale_pdf, color='C1', linewidth=2)
-    plt.xticks(x)
-    plt.legend(['Gaussian approx', 'Simulated'])
-    plt.grid(True, linestyle='--', alpha=0.4)
+    plt.plot(x_smooth, scale_pdf, color="C1", linewidth=2)
+    plt.xticks(x_bar)
+    plt.legend(["Gaussian approx", "Simulated"])
+    plt.grid(True, linestyle="--", alpha=0.4)
     plt.tight_layout()
     plt.show()
