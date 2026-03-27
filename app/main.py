@@ -1,4 +1,5 @@
 import random
+
 import matplotlib.pyplot as plt
 
 heads = 1
@@ -19,6 +20,7 @@ def flip_coin() -> dict:
         result[key] = (value / 15000) * 100
 
     return result
+
 
 def draw_gaussian_distribution_graph() -> None:
     distribution = flip_coin()
