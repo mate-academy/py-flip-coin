@@ -7,7 +7,7 @@ def flip_coin() -> dict:
 
     for _ in range(10000):
         number_of_tail = 0
-        for _ in range(10):
+        for chance in range(10):
             if random.choice(["head", "tail"]) == "tail":
                 number_of_tail += 1
         predict[number_of_tail] += 1
