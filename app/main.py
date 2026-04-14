@@ -11,6 +11,3 @@ def flip_coin(amount_of_cases: int = 10000) -> dict:
         result_dict[key] = round(result_dict[key] / amount_of_cases * 100, 2)
 
     return result_dict
-
-
-print(flip_coin())
