@@ -48,15 +48,8 @@ def draw_gaussian_distribution_graph(func: Callable) -> None:
             result[10]
         ]
     )
-    plt.figure(figsize=(10, 6))
-    plt.plot(x_axis, y_axis, marker='o', linestyle='-', color='royalblue')
-
-    plt.xticks(range(11))
-    plt.title("Rozkład Gaussa (Symulacja rzutu monetą)")
-    plt.xlabel("Liczba wyrzuconych orłów")
-    plt.ylabel("Prawdopodobieństwo (%)")
-    plt.grid(True, alpha=0.3)
+    plt.plot(x_axis, y_axis)
+    plt.xlabel("Heads count")
+    plt.ylabel("Drop percentage %")
 
     plt.show()
-
-draw_gaussian_distribution_graph(flip_coin)
