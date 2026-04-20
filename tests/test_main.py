@@ -82,7 +82,7 @@ def test_function_should_return_different_values():
         ),
     ],
 )
-def test_gausian_distribution(number, expected, limit):
+def test_gaussian_distribution(number, expected, limit):
     for _ in range(20):
         coins = flip_coin()
 
