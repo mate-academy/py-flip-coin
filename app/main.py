@@ -20,4 +20,22 @@ def flip_coin() -> dict:
 
     return res
 
+
+def make_graph():
+    data = flip_coin()
+
+    x = list(data.keys())
+    y = list(data.values())
+
+    plt.plot(x, y)
+
+    # Scale graph height to value: 30
+    plt.ylim(0, 30)
+
+    plt.xlabel("Heads")
+    plt.ylabel("%")
+    plt.title("Gaussian")
+
+    plt.show()
+
 # make_graph()
