@@ -21,13 +21,13 @@ def flip_coin() -> dict:
     return res
 
 
-def make_graph():
+def make_graph() -> None:
     data = flip_coin()
 
-    x = list(data.keys())
-    y = list(data.values())
+    a_x = list(data.keys())
+    a_y = list(data.values())
 
-    plt.plot(x, y)
+    plt.plot(a_x, a_y)
 
     # Scale graph height to value: 30
     plt.ylim(0, 30)
