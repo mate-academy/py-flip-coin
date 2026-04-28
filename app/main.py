@@ -18,7 +18,7 @@ def flip_coin() -> dict:
         statistics[count_goals] += 1
 
     for stat in statistics.keys():
-        statistics[stat] = round(statistics[stat] / count_iteration * 100)
+        statistics[stat] = statistics[stat] / count_iteration * 100
 
     return statistics
 
@@ -38,7 +38,6 @@ def draw_gaussian_distribution_graph(
     plt.xlim(0, flip_coin_times)
     plt.ylim(0, 100)
     plt.show()
-
 
 draw_gaussian_distribution_graph(
     flip_coin(),
