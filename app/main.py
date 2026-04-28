@@ -39,6 +39,7 @@ def draw_gaussian_distribution_graph(
     plt.ylim(0, 100)
     plt.show()
 
+
 draw_gaussian_distribution_graph(
     flip_coin(),
     "Coin Flip",
