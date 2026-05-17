@@ -41,4 +41,3 @@ def draw_gaussian_distribution_graph(distribution: dict) -> None:
 
 dist = flip_coin()
 draw_gaussian_distribution_graph(dist)
-
