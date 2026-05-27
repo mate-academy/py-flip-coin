@@ -17,7 +17,6 @@ def flip_coin() -> dict:
         10: 0
     }
 
-
     for i in range(10000):
         current_eagles = 0
         for _ in range(10):
@@ -28,6 +27,7 @@ def flip_coin() -> dict:
         result[key] = round((result[key] / 10000) * 100, 2)
 
     return result
+
 
 def draw_gaussian_distribution_graph() -> None:
     data = flip_coin()
