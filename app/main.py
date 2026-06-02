@@ -5,7 +5,7 @@ import numpy as np
 
 def toss_10_times() -> str:
     tosses = []
-    
+
     for _ in range(10):
         tosses.append(random.choice(["head", "tail"]))
 
