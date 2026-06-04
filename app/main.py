@@ -30,16 +30,3 @@ def flip_coin() -> dict:
         dicto[el] /= 100
 
     return dicto
-
-
-def draw_gaussian_distribution_graph(dictus: dict) -> None:
-    x_axis = numpy.array(dictus.keys())
-    y_axis = numpy.array(dictus.values())
-
-    plt.xlabel("Heads count")
-    plt.ylabel("Drop percentage")
-
-    plt.plot(x_axis, y_axis)
-
-
-draw_gaussian_distribution_graph(flip_coin())
