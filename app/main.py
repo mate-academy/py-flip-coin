@@ -1,7 +1,9 @@
 import random
+from typing import Dict
 
-def flip_coin(n_cases=10000) -> None:
-    results = {i: 0 for i in range(11)}  # 0..10 heads
+
+def flip_coin(n_cases: int = 10000) -> Dict[int, float]:
+    results = {i: 0 for i in range(11)}
 
     for _ in range(n_cases):
         heads = 0
@@ -10,11 +12,7 @@ def flip_coin(n_cases=10000) -> None:
                 heads += 1
         results[heads] += 1
 
-    # convert to percentages
-    for k in results:
-        results[k] = round(results[k] / n_cases * 100, 2)
+    for heads_count in results:
+        results[heads_count] = round(results[heads_count] / n_cases * 100, 2)
 
     return results
-
-
-print(flip_coin())
