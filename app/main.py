@@ -1,6 +1,6 @@
 import random
 
-def flip_coin(n_cases=10000) -Ю None:
+def flip_coin(n_cases=10000) -> None:
     results = {i: 0 for i in range(11)}  # 0..10 heads
 
     for _ in range(n_cases):
