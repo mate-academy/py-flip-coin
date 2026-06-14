@@ -1,4 +1,5 @@
 import random
+import matplotlib.pyplot as plt
 
 
 def flip_coin() -> dict:
@@ -22,4 +23,18 @@ def flip_coin() -> dict:
         new_value = temp / 10000 * 100
         main_dict[key] = round(new_value, 2)
 
-    return dict(sorted(main_dict.items()))
+    sorted_dict = dict(sorted(main_dict.items()))
+    return sorted_dict
+
+
+def draw_gaussian_distribution_graph(sorted_dict: dict) -> None:
+
+    y_vertical = [value for key, value in sorted_dict.items()]
+    x_horizontal = [key for key, value in sorted_dict.items()]
+
+    plt.plot(x_horizontal, y_vertical)
+
+    plt.xlabel("Heads count")
+    plt.ylabel("Drop percentage %")
+
+    plt.show()
