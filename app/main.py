@@ -3,9 +3,8 @@ import random
 import matplotlib.pyplot as plt
 
 
-def flip_coin(
-              number_of_flips: int = 10, number_of_cases: int = 10000
-        ) -> dict:
+def flip_coin(number_of_flips: int = 10,
+              number_of_cases: int = 10000) -> dict:
     results = {head_count: 0 for head_count in range(number_of_flips + 1)}
 
     for _ in range(number_of_cases):
