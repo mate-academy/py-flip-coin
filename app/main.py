@@ -10,7 +10,7 @@ def flip_coin() -> dict[int, float]:
         for _ in range(10):
             if random.choice([0, 1]) == 1:
                 heads_count += 1
-            score[heads_count] += 1
+        score[heads_count] += 1
     for iteration in score:
         result[iteration] = score[iteration] * 100 / iterations
     return result
