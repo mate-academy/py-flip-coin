@@ -1,6 +1,8 @@
 import pytest
+import matplotlib.pyplot as plt
+from unittest.mock import patch
 
-from app.main import flip_coin
+from app.main import flip_coin, draw_gaussian_distribution_graph
 
 
 def test_func_should_return_dict():
@@ -89,3 +91,25 @@ def test_gausian_distribution(number, expected, limit):
         assert expected <= coins[number] <= limit, (
             f"There must be > {number}% of '{expected}' value"
         )
+
+
+def test_draw_gaussian_distribution_graph():
+    """Test that the graph function runs without errors."""
+    with patch('matplotlib.pyplot.show') as mock_show:
+        draw_gaussian_distribution_graph()
+        mock_show.assert_called_once()
+
+
+def test_draw_gaussian_distribution_graph_creates_plot():
+    """Test that the graph function creates appropriate plot elements."""
+    with patch('matplotlib.pyplot.show'):
+        with patch('matplotlib.pyplot.bar') as mock_bar:
+            with patch('matplotlib.pyplot.xlabel') as mock_xlabel:
+                with patch('matplotlib.pyplot.ylabel') as mock_ylabel:
+                    with patch('matplotlib.pyplot.title') as mock_title:
+                        draw_gaussian_distribution_graph()
+                        
+                        mock_bar.assert_called_once()
+                        mock_xlabel.assert_called_once_with('Number of Heads')
+                        mock_ylabel.assert_called_once_with('Percentage (%)')
+                        mock_title.assert_called_once_with('Gaussian Distribution of Coin Flip Results')
