@@ -5,30 +5,33 @@ import matplotlib.pyplot as plt
 
 def flip_coin() -> dict[int, float]:
     cases = 10000
-    result = {i: 0 for i in range(11)}
+    distribution = {heads: 0 for heads in range(11)}
 
     for _ in range(cases):
-        heads = 0
+        heads_count = 0
 
         for _ in range(10):
             if random.choice([True, False]):
-                heads += 1
+                heads_count += 1
 
-        result[heads] += 1
+        distribution[heads_count] += 1
 
-    for key in result:
-        result[key] = round(result[key] / cases * 100, 2)
+    for heads_count in distribution:
+        distribution[heads_count] = round(
+            distribution[heads_count] / cases * 100,
+            2,
+        )
 
-    return result
+    return distribution
 
 
 def draw_gaussian_distribution_graph() -> None:
     distribution = flip_coin()
 
-    x = list(distribution.keys())
-    y = list(distribution.values())
+    heads_counts = list(distribution.keys())
+    drop_percentages = list(distribution.values())
 
-    plt.plot(x, y)
+    plt.plot(heads_counts, drop_percentages)
     plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage %")
