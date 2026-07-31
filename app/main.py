@@ -11,7 +11,7 @@ def flip_coin() -> dict:
             if random.randint(0, 1):
                 count += 1
         res[count] += 1
-    res = {key: value / 10000 for key, value in res.items()}
+    res = {key: value / 100 for key, value in res.items()}
     return res
 
 
@@ -31,6 +31,3 @@ def draw_gaussian_distribution_graph() -> None:
     plt.title("Gaussian distribution")
 
     plt.show()
-
-
-draw_gaussian_distribution_graph()
