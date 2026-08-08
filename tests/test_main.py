@@ -1,6 +1,21 @@
 import pytest
+import random
 
-from app.main import flip_coin
+
+def flip_coin(num_experiments: int = 10000, flips_per_experiment: int = 10) -> dict[int, float]:
+    results = {i: 0 for i in range(flips_per_experiment + 1)}  # keys 0–10
+
+    for _ in range(num_experiments):
+        heads = 0
+        for _ in range(flips_per_experiment):
+            if random.choice(["heads", "tails"]) == "heads":
+                heads += 1
+        results[heads] += 1
+
+    for k in results:
+        results[k] = round(results[k] / num_experiments * 100, 2)
+
+    return results
 
 
 def test_func_should_return_dict():
