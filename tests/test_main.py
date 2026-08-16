@@ -3,13 +3,13 @@ import pytest
 from app.main import flip_coin
 
 
-def test_func_should_return_dict():
+def test_func_should_return_dict() -> None:
     assert isinstance(flip_coin(), dict), (
         "Function 'flip_coin' should return dictionary"
     )
 
 
-def test_function_should_return_different_values():
+def test_function_should_return_different_values() -> None:
     cache = set()
 
     for _ in range(20):
@@ -82,7 +82,9 @@ def test_function_should_return_different_values():
         ),
     ],
 )
-def test_gausian_distribution(number, expected, limit):
+def test_gausian_distribution(
+    number: int, expected: float, limit: float
+) -> None:
     for _ in range(20):
         coins = flip_coin()
 
