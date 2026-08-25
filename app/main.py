@@ -32,4 +32,3 @@ def draw_gaussian_distribution_graph() -> None:
     plt.title("Gaussian distribution")
     plt.ylim(0, 100)
     plt.show()
-
