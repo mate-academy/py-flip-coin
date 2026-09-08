@@ -30,7 +30,7 @@ def flip_coin() -> dict:
         amount_of_head[head_count] += 1
 
     for result, amount in amount_of_head.items():
-        probability_of_head[result] = amount / 10000
+        probability_of_head[result] = amount / 10000 * 100
 
     return probability_of_head
 
