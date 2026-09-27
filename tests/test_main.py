@@ -1,6 +1,6 @@
 import pytest
 
-from app.main import flip_coin
+from app.main import flip_coin, draw_gaussian_distribution_graph
 
 
 def test_func_should_return_dict():
@@ -21,6 +21,9 @@ def test_function_should_return_different_values():
         "because 'random' should be used"
     )
 
+def test_create_graph():
+    cache = set()
+    draw_gaussian_distribution_graph(flip_coin())
 
 @pytest.mark.parametrize(
     "number, expected, limit",
