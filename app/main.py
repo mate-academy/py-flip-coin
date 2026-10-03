@@ -19,4 +19,3 @@ def flip_coin(cases: int = 10000) -> dict:
         )
 
     return result
-`
