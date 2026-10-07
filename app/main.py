@@ -20,10 +20,13 @@ def draw_gaussian_distribution_graph() -> None:
 
     distribution = flip_coin()
     plt.plot(distribution.keys(), distribution.values(), color="blue")
+
+    plt.title("Gaussian distribution")
     plt.xlabel("Heads count")
     plt.ylabel("Drop percentage %")
-    plt.title("Gaussian distribution")
-    plt.xticks(range(11))
+
+    plt.xticks(range(0, 11))
+    plt.yticks(range(0, 101, 10))
+    plt.xlim(0, 10)
     plt.ylim(0, 100)
-    plt.savefig("gaussian_distribution.png")
-    plt.close()
+    plt.show()
