@@ -28,10 +28,10 @@ def flip_coin() -> dict[int, float]:
 def draw_gaussian_distribution_graph() -> None:
     results: dict[int, float] = flip_coin()
 
-    x: list[int] = list(results.keys())
-    y: list[float] = list(results.values())
+    number_of_heads: list[int] = list(results.keys())
+    percentages: list[float] = list(results.values())
 
-    plt.bar(x, y, color="skyblue", edgecolor="black")
+    plt.bar(number_of_heads, percentages, color="skyblue", edgecolor="black")
 
     plt.title("Coin Flip Distribution")
     plt.xlabel("Number of Heads")
