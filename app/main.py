@@ -2,10 +2,8 @@ import random
 import matplotlib.pyplot as plt
 
 
-coin = ["heads", "tails"]
-
-
-def flip_coin(coin: list) -> dict:
+def flip_coin() -> dict:
+    coin = ["heads", "tails"]
     result = {i: 0 for i in range(11)}
     for i in range(1, 10001):
         count_of_heads = 0
