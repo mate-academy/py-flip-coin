@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 def flip_coin() -> dict:
     coin = ["heads", "tails"]
     result = {i: 0 for i in range(11)}
-    for i in range(1, 10001):
+    for i in range(10000):
         count_of_heads = 0
-        for _ in range(1, 11):
+        for _ in range(10):
             if random.choice(coin) == "heads":
                 count_of_heads += 1
         result[count_of_heads] += 1
@@ -19,6 +19,6 @@ def flip_coin() -> dict:
 def draw_gaussian_distribution_graph(result: dict) -> None:
     plt.plot(result.keys(), result.values())
     plt.xlabel("Number of heads")
-    plt.ylabel("Drop percentage %")
+    plt.ylabel("Percentage of experiments (%)")
     plt.title("Gaussian distribution")
     plt.show()
