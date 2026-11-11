@@ -11,7 +11,7 @@ def flip_coin() -> dict:
             coin = random.randint(0, 1)
             total_head_count += coin
         flip_coin_dict[total_head_count] += 1
-    percentage_dict = {key: round((value/10_000) * 100, 2) for
+    percentage_dict = {key: round((value / 10_000) * 100, 2) for
                        key, value in flip_coin_dict.items()}
     return percentage_dict
 
