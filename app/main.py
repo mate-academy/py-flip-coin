@@ -10,5 +10,3 @@ def flip_coin() -> dict[str, int]:
                 head += 1
         counts[head] += 1
     return {heads: count / 10000 * 100 for heads, count in counts.items()}
-
-print(flip_coin())
